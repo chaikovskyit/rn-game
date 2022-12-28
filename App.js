@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import StartGameScreen from './screens/StartGameScreen'
+import { ImageBackground, StyleSheet, View } from "react-native";
+import StartGameScreen from "./screens/StartGameScreen";
 
 export default function App() {
   return (
-    <>
-      <StartGameScreen />
-    </>
+    <View style={styles.appContainer}>
+      <ImageBackground
+        source={require("./assets/images/background.jpg")}
+        resizeMode="cover"
+        style={styles.appContainer}
+        imageStyle={styles.backgroundImage}
+      >
+        <StartGameScreen />
+      </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#FDC830",
   },
+  backgroundImage: {
+    opacity: 0.85
+  }
 });
