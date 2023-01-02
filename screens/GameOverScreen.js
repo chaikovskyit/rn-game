@@ -1,7 +1,10 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet} from "react-native";
+import InstructionText from "../components/ui/InstructionText";
 
-function GameOverScreen() {
-
+const GameOverScreen = () => {
+  return(
+    <InstructionText>Game is over</InstructionText>
+  )
 }
 
 export default GameOverScreen
