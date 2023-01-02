@@ -3,6 +3,7 @@ import { ImageBackground, StyleSheet, View, SafeAreaView } from "react-native";
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
 import GameOverScreen from "./screens/GameOverScreen";
+import AppLoading from 'expo-app-loading'
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();

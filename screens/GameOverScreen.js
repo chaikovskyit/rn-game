@@ -1,9 +1,15 @@
-import { StyleSheet} from "react-native";
-import InstructionText from "../components/ui/InstructionText";
+import { StyleSheet, View} from "react-native";
+
+import Title from "../components/ui/Title";
+import { Ionicons } from '@expo/vector-icons'
 
 const GameOverScreen = () => {
   return(
-    <InstructionText>Game is over</InstructionText>
+    <View>
+      <Title>GAME OVER!</Title>
+      <Ionicons name="md-cloud-done-sharp" size={70} color='black'/>
+    </View>
+
   )
 }
 
