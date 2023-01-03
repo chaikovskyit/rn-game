@@ -1,25 +1,56 @@
-import { StyleSheet, View} from "react-native";
+import { StyleSheet, View, Image, Text } from "react-native";
 
 import Title from "../components/ui/Title";
-import { Ionicons } from '@expo/vector-icons'
+
+import PrimaryButton from "../components/ui/PrimaryButton";
 
 const GameOverScreen = () => {
-  return(
-    <View>
+  return (
+    <View style={styles.container}>
       <Title>GAME OVER!</Title>
-      <Ionicons name="md-cloud-done-sharp" size={70} color='black'/>
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          source={require("../assets/images/over.png")}
+        />
+      </View>
+      <Text style={styles.summaryText}>
+        Your phone needed <Text style={styles.highlight}>X</Text> rounds to
+        guess the number <Text style={styles.highlight}>Y</Text> .
+      </Text>
+      <PrimaryButton>Start New Game</PrimaryButton>
     </View>
+  );
+};
 
-  )
-}
-
-export default GameOverScreen
+export default GameOverScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 24,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  imageContainer: {
+    height: 300,
+    width: 300,
+    borderRadius: 150,
+    borderWidth: 3,
+    borderColor: "white",
+    overflow: "hidden",
+    margin: 36,
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+  },
+  summaryText: {
+    marginBottom: 24,
+    fontSize: 24,
+    textAlign: "center",
+  },
+  highlight: {
+    fontWeight: "bold",
   },
 });
