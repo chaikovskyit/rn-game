@@ -18,11 +18,11 @@ export default PrimaryButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor: '#f2cc9a',
+    backgroundColor: 'rgba(0, 0, 0, 0.9)',
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 8,
-    paddingVertical: 8,
+    paddingVertical: 12,
     paddingHorizontal: 16,
     margin: 4,
     shadowColor: "black",

@@ -13,9 +13,10 @@ export default GuessLogItem
 
 const styles = StyleSheet.create({
   listItem: {
-    borderColor: 'white',
+    borderColor: 'black',
     borderRadius: 8,
     borderWidth: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
     padding: 12,
     marginVertical: 8,
     flexDirection: 'row',
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
   },
   itemText: {
-
+    color: 'white',
+    fontSize: 20
   }
 })

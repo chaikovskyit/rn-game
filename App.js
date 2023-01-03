@@ -3,42 +3,51 @@ import { ImageBackground, StyleSheet, View, SafeAreaView } from "react-native";
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
 import GameOverScreen from "./screens/GameOverScreen";
-import AppLoading from 'expo-app-loading'
+import { StatusBar } from "expo-status-bar";
+import AppLoading from "expo-app-loading";
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
-  const [gameIsOver, setGameIsOver] = useState(true)
-  const [guessRounds, setGuessRounds] = useState(0)
+  const [gameIsOver, setGameIsOver] = useState(true);
+  const [guessRounds, setGuessRounds] = useState(0);
 
   const pickedNumberHandler = (pickedNumber) => {
     setUserNumber(pickedNumber);
-    setGameIsOver(false)
+    setGameIsOver(false);
   };
 
   const gameOverHandler = (numberOfRounds) => {
-    setGameIsOver(true)
-    setGuessRounds(numberOfRounds)
-  }
+    setGameIsOver(true);
+    setGuessRounds(numberOfRounds);
+  };
 
   const startNewGameHandler = () => {
     setUserNumber(null);
-    setGuessRounds(0)
-
-  }
+    setGuessRounds(0);
+  };
 
   let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
 
   if (userNumber) {
-    screen = <GameScreen userNumber={userNumber} onGameOver={gameOverHandler}/>;
+    screen = (
+      <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />
+    );
   }
 
   if (gameIsOver && userNumber) {
-    screen = <GameOverScreen userNumber={userNumber} roundsNumber={guessRounds} onStartNewGame={startNewGameHandler}/>
+    screen = (
+      <GameOverScreen
+        userNumber={userNumber}
+        roundsNumber={guessRounds}
+        onStartNewGame={startNewGameHandler}
+      />
+    );
   }
 
-
   return (
-    <View style={styles.appContainer}>
+    <>
+      <StatusBar style='light'/>
+      <View style={styles.appContainer}>
       <ImageBackground
         source={require("./assets/images/background.jpg")}
         resizeMode="cover"
@@ -48,15 +57,15 @@ export default function App() {
         <SafeAreaView style={styles.appContainer}>{screen}</SafeAreaView>
       </ImageBackground>
     </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    // backgroundColor: "#FDC830",
   },
   backgroundImage: {
-    opacity: 0.75,
+    opacity: 0.9,
   },
 });

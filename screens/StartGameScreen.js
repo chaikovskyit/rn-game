@@ -44,6 +44,9 @@ function StartGameScreen({ onPickNumber }) {
           autoCorrect={false}
           onChangeText={numberInputHandler}
           value={enteredNumber}
+          placeholder='?'
+          // placeholder='.!..'
+          placeholderTextColor={'white'}
         />
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 36,
     marginHorizontal: 24,
-    padding: 16,
+    padding: 26,
     backgroundColor: "#f2cc9a",
     borderRadius: 8,
     shadowColor: "black",
@@ -81,15 +84,15 @@ const styles = StyleSheet.create({
   },
 
   numberInput: {
-    height: 80,
-    width: 80,
+    height: 90,
+    width: 90,
     fontSize: 36,
     fontWeight: "bold",
     color: "white",
     borderColor: "white",
     padding: 8,
-    borderWidth: 2,
-    marginVertical: 18,
+    borderWidth: 1,
+    marginVertical: 28,
     textAlign: "center",
     borderRadius: 8,
     shadowColor: "black",
